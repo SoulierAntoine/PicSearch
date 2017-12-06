@@ -1,0 +1,16 @@
+<button (click)="goBack()" class="btn btn-secondary" [ngStyle]="{'margin-bottom':'.5rem'}">Go back</button>
+
+<div class="card" *ngIf="hit">
+  <img class="card-img-top" src="{{hit.webformatURL}}" alt="hit.tags">
+  <div class="card-body">
+    <h4 class="card-title">{{hit.id}}</h4> by {{hit.user}}
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  </div>
+  <ul class="list-group list-group-flush" *ngIf="tags.length">
+    <li class="list-group-item"><span *ngFor="let tag of tags">{{tag}}</span></li>
+  </ul>
+  <div class="card-body">
+    <a target="_blank" href="{{hit.pageURL}}" class="card-link">Page URL</a>
+    <a href="{{hit.webformatURL}}" target="_blank" download><img src="../../../assets/svg/data-transfer-download.svg" alt="Download"></a>
+  </div>
+</div>
